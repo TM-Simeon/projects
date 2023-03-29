@@ -1,0 +1,110 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#menuBar{
+	height: 70px;
+	/*background: orange;*/
+	border-bottom: 2px solid gray; padding-top: 10px;
+}
+#section2{
+	display: flex; width: 100%;
+}
+#sideBar1{
+	background:; min-height: 600px; display: inline-block; margin: 0px; padding: 0px;
+	text-align: center; border-right: 1px solid gray; width: 5%; position: ;
+}
+#sideBar1 img{
+	margin: 20px 0px 20px 0px;
+}
+#firstImage{
+	margin-top: 70px;
+}
+#sideBar2{
+	width: 22%; background: #efeff5; min-height: 600px; display: inline-block; 
+	margin: 0px; padding: 0px; overflow-y: scroll; position: ;
+}
+#week1, #week2, #week3, #week4, #week5 {
+	border-bottom: 1px solid #d0d0e1; min-height: 50px; line-height: 50px;
+}
+#week1 > p, #week2 > p, #week3 > p, #week4 > p, #week5 > p{
+	margin-left: 10%;
+	width: 60%;
+	display: inline-block;
+}
+
+#weekprogress{
+	height: 150px; line-height: 150px; border-bottom: 1px solid #d0d0e1; font-size: 25px; 
+}
+#weekprogress > p{
+	margin: 0px 0px 0px 10%;
+}
+#downloadreport{
+	border: 0px; min-height: 40px; margin: 10px 0px 0px 10%; font-size: 25px;
+}
+#sideBar3{
+	width: 73%; /*background: green;*/ min-height: 600px;
+	display: inline-block; margin: 0px; padding: 0px; position: 
+}
+
+#alpha{
+	height: 50px; width: 150px; text-align: center; display: inline-block; margin-right: 20px; 
+	background: #efeff5 ; border: 1px solid gray; line-height: 50px; border-radius: 10%;
+}
+#lesson{
+	padding:0px 10px 0px 0px; margin: 0px 2% 0px 3%; display: inline-block; background:;
+}
+ #alphaClan{
+ 	margin: 0px; padding: 0px; line-height: 25px;
+ }
+ #dataScience{
+ 	margin: 0px; padding: 0px; line-height: 10px;
+ }
+
+ #user{
+ 	display: inline-block; float: right; height: 50px; padding: 10px; line-height:; 
+ 	margin: 0px 3% 0px 0px; background:;
+ }
+ #username{
+ 	margin: 0px; padding:0px; line-height: 35px; float: ;
+ }
+ #code{
+ 	margin: 0px; padding:0px; line-height: 0px; float: right;
+ }
+ #nameCode{
+ 	height: 70px; background:; display: inline-block;
+ }
+ #avatar{
+ 	line-height: 0px; height: 70px; display: inline-block; float: right; padding-left: 5px;
+ }
+ #notification{
+ 	display: inline-block;float: right; height: 70px; background:; padding-right: 10px; line-height: 70px; margin: 0px 7% 0px 0px;
+ }
+ #help{
+ 	float: right;text-align: center; height: 70px; background: ; padding:10px 10px 0px 0px; /*line-height: 70px;*/ text-align: left; margin: 0px 7% 0px 0px;
+ }
+ #help p{
+ 	display: inline-block; font-size: 20px; line-height: 0px
+ }
+ #sideBar3 > iframe{
+ 	padding: 10px 0px 0px 30px;
+ }
+ #sideBar3 > h4{
+ 	padding-left: 30px;
+ }
+
+.iframe{
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	height: 0;
+}
+.iframe iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	height: 90%;
+	padding-left: 5%;
+	padding-top: 5%;
+}

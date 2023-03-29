@@ -1,0 +1,25 @@
+#courseSlide{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.swipper{
+	width: 80%;
+	height: fit-content;
+}
+.swiper-slide{
+	text-align: center;
+}
+.swipper-slide h1{
+	/*padding: 5%;*/
+	display: inline-block;
+	/*width: 100%;*/
+}
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+	color: white;
+	/*height: 10px;*/
+}
+
+.swiper .swiper-pagination-bullet-active{
+	background: white;
+}
