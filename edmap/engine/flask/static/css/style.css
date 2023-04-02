@@ -1,0 +1,21 @@
+#footer{
+	min-height: 50px;
+	width: 100%;
+	background: ;
+	position: absolute;
+	line-height: 50px;
+}
+/*#programmes, #edmap, #sociallinks{
+	display: inline-block;
+}
+#programmes, #edmap{
+	float: left;
+}
+#sociallinks{
+	float: right;
+}*/
+#footer > h1{
+	float: right;
+	padding-right: 3%;
+	font-size: 20px;
+}
