@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+	<meta charset="utf-8">
+	<title>session - new login</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/signup.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link rel="icon" type="image/x-icon" href="../static/images/coloredglobe.ico">
 </head>
-
 <body>
-    <h1>Register Page</h1>
+	<div id="body">
+		<div id="login">
+			<a id="signuppagelink" href="#"><h4 id="signuppage" >Signup</h4></a>
+			<a id="loginpagelink" href="login"><h4 id="loginpage" >Login</h4></a>
+			<div class="edumap">
+				<h2>EdMap</h2>
+			</div>
+			<h4 id="email">Email</h4>
+			<input id="inputemail" type="text" name="email">
+			<h4 id="password">Password</h4>
+			<input id="inputpassword" type="password" name="password">
+			<!-- <div id="rememberme"><input type="checkbox" name="">&nbsp;Remember me</div> -->
+			<button id="button">Create Account</button> 
+			<div id="forgotpassworddiv">By creating an account, you agree to the edmap membership <a href="#">agreement and privacy policy</a></div>
+		</div>
 
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        {{ form.username }}
-        {{ form.password }}
-        {{ form.submit }}
-    </form>
+	</div>
 
-    <a href="{{ url_for('login') }}">Already have an account? Log In</a>
 </body>
-
 </html>
