@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>session - new login</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/staffSignup.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link rel="icon" type="image/x-icon" href="../static/images/coloredglobe.ico">
+</head>
+<body>
+	<div id="body">
+		<form id="login" method="POST">
+			<a id="signuppagelink" href="studentSignup"><h4 id="studentpage" >Student</h4></a>
+			<a id="loginpagelink" href="#"><h4 id="staffpage" >Staff</h4></a>
+			<div class="edumap">
+				<h2>EdMap</h2>
+			</div>
+			<div id="error"></div>
+			<h4 id="email">Email</h4>
+			<input id="inputemail" type="text" name="email">
+			<h4 id="password">What is your subject area ?</h4>
+			<select id="selectLevel" name="cars">
+				<option value="volvo"></option>
+				<option value="saab">Junior sec sch</option>
+				<option value="fiat">science Sec Sch</option>
+				<option value="audi">Arts Sec Sch</option>
+				<option value="audi">Commercial Sec Sch</option>
+				<option value="saab">Undergraduate Engineering</option>
+				<option value="saab">Undergraduate Medicine</option>
+				<!-- <option value="audi"></option> -->
+
+			  </select>
+			<!-- <input id="inputpassword" type="password" name="password"> -->
+			<!-- <div id="rememberme"><input type="checkbox" name="">&nbsp;Remember me</div> -->
+			<button type="submit" id="button">Submit</button> 
+
+			<div id="forgotpassworddiv">By creating a staff account, you agree to the edmap membership <a href="#">agreement & policy</a></div>
+		</form>
+
+	</div>
+	<script type="text/javascript" src="../static/js/staffSignup.js"></script>
+
+</body>
+</html>

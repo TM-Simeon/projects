@@ -14,13 +14,17 @@
 	box-shadow: 5px 5px 2px #d0d0e1;
 }
 #login > input{
-	border-radius: 3px; min-height: 20px; min-width: 250px; border: 1px solid #d0d0e1;
+	border-radius: 3px; min-height: 30px; min-width: 250px; border: 1px solid #d0d0e1;
+}
+#login > select{
+	border-radius: 3px; min-height: 30px; min-width: 250px; border: 1px solid #d0d0e1;
+	display: block; margin: auto;
 }
 #body{
 	text-align: center;
 }
 .edumap{
-	background:; height: 150px; line-height: 150px;
+	height: 150px; line-height: 150px;
 }
 .edumap > h2{
 	padding-top: 20px; font-size: 50px;
@@ -63,7 +67,4 @@
 }
 #forgotpassworddiv{
 	padding: 40px;
-}
-#error{
-	color: red;
 }

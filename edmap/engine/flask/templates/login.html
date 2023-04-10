@@ -9,12 +9,13 @@
 </head>
 <body>
 	<div id="body">
-		<div id="login">
+		<form id="login" method="POST">
 			<a id="signuppagelink" href="signup"><h4 id="signuppage" >Signup</h4></a>
 			<a id="loginpagelink" href="#"><h4 id="loginpage" >Login</h4></a>
 			<div class="edumap">
 				<h2>EdMap</h2>
 			</div>
+			<div id="error"></div>
 			<h4 id="email">Email</h4>
 			<input id="inputemail" type="text" name="email">
 			<h4 id="password">Password</h4>
@@ -23,9 +24,9 @@
 			<a href="dashboard"><button id="button">Login</button></a>
 			<div id="forgotpassworddiv"><a id="forgotpasswordlink" href="#">Forgot your password?</a></div>
 
-		</div>
+		</form>
 	</div>
-	<!-- <script type="text/javascript" src="./login.js"></script> -->
+	<script type="text/javascript" src="../static/js/login.js"></script>
 
 </body>
 </html>

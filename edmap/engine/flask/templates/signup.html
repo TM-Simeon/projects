@@ -6,25 +6,30 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/signup.css">
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 	<link rel="icon" type="image/x-icon" href="../static/images/coloredglobe.ico">
+
 </head>
 <body>
 	<div id="body">
-		<div id="login">
+		<form id="login" method="POST">
 			<a id="signuppagelink" href="#"><h4 id="signuppage" >Signup</h4></a>
 			<a id="loginpagelink" href="login"><h4 id="loginpage" >Login</h4></a>
 			<div class="edumap">
 				<h2>EdMap</h2>
 			</div>
+			<div id="error"></div>
+			<h4 id="email">Full Name (25 characters max)</h4>
+			<input id="inputname" type="text" name="name">
 			<h4 id="email">Email</h4>
 			<input id="inputemail" type="text" name="email">
 			<h4 id="password">Password</h4>
 			<input id="inputpassword" type="password" name="password">
 			<!-- <div id="rememberme"><input type="checkbox" name="">&nbsp;Remember me</div> -->
-			<button id="button">Create Account</button> 
+			<button id="button" type="submit">Create Account</button> 
 			<div id="forgotpassworddiv">By creating an account, you agree to the edmap membership <a href="#">agreement and privacy policy</a></div>
-		</div>
+		</form>
 
 	</div>
+	<script type="text/javascript" src="../static/js/signup.js"></script>
 
 </body>
 </html>

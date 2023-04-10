@@ -1,13 +1,15 @@
 import sqlite3
 
-conn = sqlite3.connect('db.db')
-conn.execute('CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY AUTOINCREMENT, username text NOT NULL UNIQUE, password TEXT NOT NULL, email TEXT NOT NULL UNIQUE)')
-conn.execute('CREATE TABLE IF NOT EXISTS student(student_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, first_name TEXT NUO NULL, last_name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, FOREIGN KEY(user_id) REFERENCES users(user_id))')
-conn.execute('CREATE TABLE IF NOT EXISTS courses (course_id INTEGER PRIMARY KEY NOT NULL UNIQUE, course_title TEXT NOT NULL UNIQUE, description TEXT NOT NULL)')
-conn.execute('CREATE TABLE IF NOT EXISTS instructor(instructor_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, FOREIGN KEY (user_id) REFERENCES users(user_id))')
-conn.execute('CREATE TABLE IF NOT EXISTS enrollment (enrollment_id INTEGER PRIMARY KEY AUTOINCREMENT, student_id INTEGER NOT NULL, course_id INTEGER NOT NULL, FOREIGN KEY (student_id) REFERENCES student(student_id), FOREIGN KEY (course_id) REFERENCES courses(course_id))')
-conn.commit()
-conn.close()
+#create database  DO NOT DELETE THIS COMMENTS, WE USE IT TO CREATE TABLES THEN COMMENT IT OUT TO IMPROVE SPEED
+# conn = sqlite3.connect('db.db')
+# conn.execute('CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY AUTOINCREMENT, username text NOT NULL UNIQUE, password TEXT NOT NULL, email TEXT NOT NULL UNIQUE)')
+# conn.execute('CREATE TABLE IF NOT EXISTS student(student_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, FOREIGN KEY(user_id) REFERENCES users(user_id))')
+# conn.execute('CREATE TABLE IF NOT EXISTS courses (course_id INTEGER PRIMARY KEY NOT NULL UNIQUE, course_title TEXT NOT NULL UNIQUE, duration INTEGER NOT NULL, description TEXT NOT NULL)')
+# conn.execute('CREATE TABLE IF NOT EXISTS instructor(instructor_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, FOREIGN KEY (user_id) REFERENCES users(user_id))')
+# conn.execute('CREATE TABLE IF NOT EXISTS enrollment (enrollment_id INTEGER PRIMARY KEY AUTOINCREMENT, student_id INTEGER NOT NULL, course_id INTEGER NOT NULL, FOREIGN KEY (student_id) REFERENCES student(student_id), FOREIGN KEY (course_id) REFERENCES courses(course_id))')
+# conn.execute('CREATE TABLE IF NOT EXISTS videoLinks (course_id TEXT NOT NULL, week INTEGER NOT NULL, day INTEGER NOT NULL, link TEXT NOT NULL, FOREIGN KEY (course_id) REFERENCES courses(course_id))')
+# conn.commit()
+# conn.close()
 
 def fetchdata(table, key, value):
     try:
@@ -47,6 +49,7 @@ def insertuser(name, password, emaildata):
                 conn.close()
                 return "user {} created successfully".format(emaildata)
             else:
+                # return results2[1]
                 return "user already exist with the username: {}".format(name)
         else:
             return "user already exist with the email: {}".format(results[3])
@@ -143,6 +146,6 @@ def insertEnrollment(student_id, course_id, emaildata):
         return e 
 
 
-# print(insertuser("blessing111","nguemo",'blessingnguemo111@gmail.com'))
+# print(insertuser("terdoo mnaan terdoo","shdds",'terdooe434@gmail.com'))
 # print(insertInstructor("blessing111","nguemo",'blessingnguemo111@gmail.com'))
-print(insertEnrollment("23","introduction to chemical engineering","simeon@gmail.com"))
+# print(insertEnrollment("23","introduction to chemical engineering","simeon@gmail.com"))
