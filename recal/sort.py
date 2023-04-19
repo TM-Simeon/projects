@@ -17,10 +17,10 @@ def bubbleSort(arr):
 # Driver code
  
 # Example to test the above code
-arr = [ 2, 1, 10, 10, 23, 10 ]
+# arr = [ 2, 1, 10, 10, 23, 10 ]
  
-bubbleSort(arr)
+# bubbleSort(arr)
  
-print("Sorted array is:")
-for i in range(len(arr)):
-    print("%d" % arr[i])
+# print("Sorted array is:")
+# for i in range(len(arr)):
+#     print("%d" % arr[i])

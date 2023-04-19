@@ -1,0 +1,146 @@
+
+#aside {
+	/*background: green;*/
+	min-height: 150px;
+	width: 30%;
+	display: inline-block;
+	text-align: right;
+}
+#insideaside {
+	text-align: left;
+	display: flex;
+	margin-top: 15px;
+}
+#aside h1 {
+	margin: 5px 20px 0px 0px;
+	/*margin-right: 10px;*/
+
+}
+#aside h4 {
+	margin: 20px 20px 0px 0px;
+}
+#insideaside img {
+	width: 100px;
+	border-radius: 30px 0px 30px 0px;
+	border: 2px dotted blueviolet;
+	display: inline-block;
+}
+#insideaside p {
+	display: inline-block;
+	/*width: 60%;*/
+	margin: 15px 0px 0px 10px;
+}
+#progress {
+	text-align: left;
+	/*background: gold;*/
+	margin-left: 10px;
+}
+#classes {
+	background: #22438C;
+	margin-top: 35px;
+	color: white;
+	width: 50%;
+}
+#assignments {
+	background: #22438C;
+	margin-top: 15px;
+	color: white;
+}
+#test {
+	background: #22438C;
+	margin-top: 15px;
+	color: white;
+	width: 80%;
+}
+#socials {
+	background: #22438C;
+	margin-top: 15px;
+	color: white;
+	width: 80%;
+}
+#entrepreneurship {
+	background: #22438C;
+	margin-top: 15px;
+	color: white;
+	width: 40%;
+}
+
+#scale {
+	background: #22438C;
+	margin-top: 25px;
+	color: white;
+	/*border: 2px solid black;*/
+
+}
+#scale h5 {
+	display: inline-block;
+	margin-left: 15%;
+}
+#scale p{
+	display: inline-block;
+}
+#section {
+	/*background: black;*/
+	min-height: 150px;
+	width: 70%;
+	/*display: flex;*/
+
+}
+#flex {
+	display: flex;
+	margin-top: 35px;
+}
+#topsection {
+	min-height: 150px;
+	/*width: 100%;*/
+	border-top: 2px solid blue;
+	border-bottom: 2px solid blue;
+	border-radius: 30px 30px 0px 0px;
+	margin-left: 35px;
+	margin-right: 35px;
+
+}
+#topsection h1 {
+	text-align: center;
+}
+#topsection div:last-of-type{
+	text-align: center;
+	padding: 25px 0px 30px 0px;
+}
+#downsection {
+	/*background: orange;*/
+	min-height: 150px;
+	width: 100%;
+	margin-top: 20px;
+	border-radius: 30px 0px 30px 0%;
+	text-align: center;
+}
+#topsectiontitle {
+	/*background: green;*/
+	margin-right: 45px;
+}
+#topsectiontitlediv {
+	padding-top: 20px;
+}
+#topsectiontitlediv h1{
+	display: inline-block;
+	/*margin-left: 150px;*/
+	width: 25%;
+	text-align: right;
+}
+#downsection h1 {
+	text-align: center;
+	color: #22438C;
+	text-decoration: underline;
+}
+#downsection div{
+	display: inline-block;
+	margin: 35px;
+	/*height: 450px;*/
+}
+
+#downsection div:last-of-type{
+	display: block;
+	text-align: center;
+	padding-bottom: 30px;
+}

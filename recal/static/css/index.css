@@ -1,0 +1,83 @@
+#section1 {
+	background-image: url("../images/index.png");
+	min-height: 500px;
+	box-shadow: 10px 10px 5px lightblue;
+}
+#innertext {
+	padding: 150px 0px 0px 200px;
+	display: inline-block;
+	max-width: 650px;
+
+}
+#innertext button {
+	margin-top: 45px;
+	background: blue;
+	color: white;
+}
+#section2 {
+	display: flex;
+}
+#innerblock {
+	display: inline-block;
+	max-width: 350px;
+	background: #22438C;
+	border-radius: 0px 25px 0px 25px;
+	margin: 15px 0px 0px 150px;
+	color: white;
+
+}
+#innerlearn {
+	display: inline-block;
+	margin: 40px 0px 0px 150px;
+	/*text-align: center;*/
+
+}
+#innerlearn h2, p {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+#innerlearn h2:nth-of-type(2) {
+	margin-left: 25px;
+}
+#innerlearn h2:last-of-type {
+	margin-left: 50px;
+}
+#innerlearn h1 {
+	text-align: center;
+	color: blueviolet;
+	margin-bottom: 15px;
+}
+#section3 {
+	display: flex;
+}
+#innerexplanation {
+	display: inline-block;
+	max-width: 350px;
+	/*background: blue;*/
+	min-height: 200px;
+	/*border-radius: 0px 25px 0px 25px;*/
+	margin: 15px 0px 0px 150px;
+	/*text-align: center;*/
+
+}
+#innerexplanation h2 {
+	margin-top: 45px;
+	text-align: center;
+}
+#innerexplanation button {
+	margin-left: 50px;
+	margin-top: 20px;
+}
+#innerpicture {
+	height: 200px;
+	width: 300px;
+	display: inline-block;
+	border: 2px solid blue;
+	margin: 15px 0px 0px 450px;
+	border-radius: 0% 30% 0% 30%;
+	background-image: url("../images/student.png");
+	background-size: 500px;
+	background-repeat: no-repeat;
+}
+/*justakinyi1@gmail.com
+https://chat.whatsapp.com/J7EYfflFfP20VKfSrCvNjy*/

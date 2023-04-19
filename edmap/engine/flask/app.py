@@ -8,7 +8,7 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, login_
 app = Flask(__name__)
 
 # create a Flask app instance
-app = Flask(__name__)
+# app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret-key' # set secret key for session management
 
 # create a LoginManager instance and initialize it with the Flask app
@@ -66,7 +66,7 @@ def logout():
 
 # a protected route that requires login
 @app.route('/')
-@login_required
+# @login_required
 def index():
     return render_template('index.html')
 

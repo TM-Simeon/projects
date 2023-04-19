@@ -1,0 +1,87 @@
+#examinput{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: green;
+}
+#examupdate{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: black;
+}
+#examinput1{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: black;
+}
+#examupdate1{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: green;
+}
+#clubinput{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: green;
+}
+#clubupdate{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: black;
+}
+#clubinput1{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: black;
+}
+#clubupdate1{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: green;
+}
+#sportinput{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: green;
+}
+#sportupdate{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: black;
+}
+#sportinput1{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: black;
+}
+#sportupdate1{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: green;
+}
+#characterinput{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: green;
+}
+#characterupdate{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: black;
+}
+#characterinput1{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: black;
+}
+#characterupdate1{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: green;
+}
+
+#footer{
+	min-height: 50px;
+	width: 100%;
+	background: ;
+	position: absolute;
+	line-height: 50px;
+}
+/*#programmes, #edmap, #sociallinks{
+	display: inline-block;
+}
+#programmes, #edmap{
+	float: left;
+}
+#sociallinks{
+	float: right;
+}*/
+#footer > h1{
+	float: right;
+	padding-right: 3%;
+	font-size: 20px;
+	color: #d67609;
+}

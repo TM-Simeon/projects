@@ -1,0 +1,75 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+#login{
+	width: 400px;
+	background: #efeff5;
+	text-align: center;
+	margin: auto;
+	/*margin-top: 50px;*/
+	/*margin-bottom: 50px;*/
+	border-radius: 7px;
+	box-shadow: 5px 5px 2px #d0d0e1;
+	transform: scale(0.9);
+}
+#login > input{
+	border-radius: 3px; min-height: 30px; min-width: 250px; border: 1px solid #d0d0e1;
+	text-align: center;
+}
+form > input {
+	text-align: center;
+}
+#body{
+	text-align: center;
+}
+.edumap{
+	background:; height: 150px; line-height: 150px;
+}
+.edumap > h2{
+	padding-top: 20px; font-size: 50px;
+}
+/*#signuppage{
+	display: inline-block; float: left; margin-left: 32%; background: white; width: 18%; 
+	border-radius:0px 0px 0px 15px; color: green;
+}
+#loginpage{
+	display: inline-block; float: right; margin-right: 32%; background: white; width: 18%;
+	border-radius:0px 0px 15px 0px; color: black;
+}*/
+
+#course_id{
+	margin-top: 20px;
+}
+#student_id{
+	margin-top: 20px;
+}
+#score{
+	padding: 10px;
+}
+#inputexams{
+	display: block; margin: auto;
+}
+#button{
+	/*display: block;*/ margin: auto; margin-top: 40px; height: 30px; width: 110px;
+	background: #ff9999; border-style: none; border-radius: 3px; color: white;
+}
+#button:active{
+	background: green;
+	/*border-style: 2px solid white;*/
+}
+#forgotpasswordlink{
+	color: red;
+	text-decoration: none;
+}
+#forgotpasswordlink:hover{
+	font-size: 20px;
+}
+#rememberme{
+	padding: 20px;
+}
+#forgotpassworddiv{
+	padding: 40px;
+}
