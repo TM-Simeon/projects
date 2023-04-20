@@ -160,7 +160,6 @@ def callfunction():
     # print(insertcourse('Fmaths','further mathematics', 'instroduction to further mathematics', 6))
     # print(insertenrollment(3,'mat'))
     # print(insertresults(1,"phy", 20, 20, 20, 40))
-    # print(updateresult(1,1,'phy'))
 
 
     # print(insertstudent('Mnaan Simeon','mnaansimeon@gmail.com','science'))
@@ -351,13 +350,15 @@ def getstudentresults(student_id):
         studentdata = cursor.fetchone()
         conn.close()
         if courseresults is not None and classresults is not None and studentdata is not None:
+            results['Name'] = studentdata[1]
+            results["Department"] = studentdata[0]
+            courses = []
             for row in courseresults:
-                results['Name'] = studentdata[1]
-                results["Department"] = studentdata[0]
+                courses.append(row[1])
                 results[row[1]] = {"test1":row[2], "test2": row[3], "test3": row[4], "exam": row[5], "total": row[6], "course_position": row[7]}
             results["overall total"] = classresults[1]
             results["class position"] = classresults[2]
-            return results
+            return courses, results
         else:
             department = studentdata[0]
             name = studentdata[1]
@@ -371,11 +372,15 @@ def getstudentresults(student_id):
 # calresults('commercial')
 # class_position('science')
 # class_position('commercial')
-calcourseposition('phy')
+# calcourseposition('phy')
 # calcourseposition('eng')
 # calcourseposition('geo')
 # calcourseposition('eco')
 # calcourseposition("mat")
-# use = getstudentresults(1)
+# course, result = getstudentresults(1)
+# print(len(course))
+# print(result['eng']['test1'])
+# print(course[0])
 # for row in getstudentresults(2).items():
 #     print(row)
+# print(getstudentresults(3))

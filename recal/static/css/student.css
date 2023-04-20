@@ -86,12 +86,21 @@
 	/*display: flex;*/
 
 }
+td {
+	border: 1px solid black;
+	text-align: center;
+}
+form input {
+	text-align: center;
+	margin: auto;
+}
 #flex {
 	display: flex;
 	margin-top: 35px;
 }
 #topsection {
-	min-height: 150px;
+	min-height: 350px;
+	min-width: 350px;
 	/*width: 100%;*/
 	border-top: 2px solid blue;
 	border-bottom: 2px solid blue;

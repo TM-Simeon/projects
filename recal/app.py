@@ -19,6 +19,13 @@ def staff():
 
 @app.route('/student.html', methods=['POST','GET'])
 def student():
+    if request.method == 'POST':
+        student_id = request.form['student_id']
+        try:
+            courses, results = getstudentresults(student_id)
+            return render_template('student.html', courses = courses, results = results)
+        except Exception as e:
+            return render_template('student.html', error = "No results for student with id: {}".format(student_id))
     return render_template('student.html')
 
 @app.route('/character.html', methods=['POST','GET'])
@@ -43,6 +50,13 @@ def sports():
 def test():
     if request.method == 'POST':
         course_id = request.form['course_id']
+        student_id = request.form['student_id']
+        test1 = request.form['test1']
+        test2 = request.form['test2']
+        test3 = request.form['test3']
+        exams = request.form['exams']
+        insertresults(student_id, course_id, test1, test2, test3, exams)
+        return render_template('test.html')
     return render_template('test.html')
 
 @app.route('/updatecharacter.html', methods=['POST','GET'])
@@ -68,6 +82,38 @@ def updatetest():
     if request.method == 'POST':
         course_id = request.form['course_id']
     return render_template('updatetest.html')
+
+@app.route('/courseposition.html', methods=['POST', 'GET'])
+def courseposition():
+    if request.method == 'POST':
+        course_id = request.form['course_position']
+        calcourseposition(course_id)
+        return render_template('staff.html')
+    return render_template('staff.html')
+        
+@app.route('/classposition.html', methods=['POST','GET'])
+def classposition():
+    if request.method == 'POST':
+        department = request.form['class_results']
+        class_position(department)
+        return render_template('staff.html')
+    return render_template('staff.html')
+
+@app.route('/studentresult.html', methods=['POST','GET'])
+def studentresult():
+    if request.method == 'POST':
+        student_id = request.form['student_results']
+        # courses, results = getstudentresults(student_id)
+        # if type(resultdata) == dict:
+        #     return resultdata
+        # else:
+        #     return "no student with such id wrote exams"
+        try:
+            courses, results = getstudentresults(student_id)
+            return results
+        except Exception as e:
+            return "No results for student with id: {}".format(student_id)
+    return render_template('staff.html')
 
 @app.route('/insertstaff', methods=['POST','GET'])
 def insertstaff():
@@ -144,4 +190,4 @@ def calresult():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

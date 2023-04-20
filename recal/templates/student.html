@@ -51,62 +51,37 @@
 	</div>
 	<div id="section">
 		<div id="topsection">
+			<form method="POST">
 			<h1>course Results</h1>
-			<div id="topsectiontitlediv">
-				<span id="topsectiontitle"><h1>courses</h1></span>
-				<span id="topsectiontitle">test1</span>
-				<span id="topsectiontitle">test2</span>
-				<span id="topsectiontitle">test3</span>
-				<span id="topsectiontitle">Exams</span>
-				<span id="topsectiontitle">total</span>
-				<span id="topsectiontitle">position</span>
-			</div>
-			<div id="topsectiontitlediv">
-				<span id="topsectiontitle"><h1>physics</h1></span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">........</span>
-			</div>
-			<div id="topsectiontitlediv">
-				<span id="topsectiontitle"><h1>maths</h1></span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">........</span>
-			</div>
-			<div id="topsectiontitlediv">
-				<span id="topsectiontitle"><h1>English</h1></span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">........</span>
-			</div>
-			<div id="topsectiontitlediv">
-				<span id="topsectiontitle"><h1>Chemistry</h1></span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">........</span>
-			</div>
-			<div id="topsectiontitlediv">
-				<span id="topsectiontitle"><h1>Biology</h1></span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">.....</span>
-				<span id="topsectiontitle">........</span>
-			</div>
+			<table style="width:100%">
+				<tr>
+				  <th>Courses</th>
+				  <th>test1</th>
+				  <th>test2</th>
+				  <th>test3</th>
+				  <th>exams</th>
+				  <th>total</th>
+				  <th>position</th>
+				</tr>
+				
+				{% for course in courses %}
+				<tr>
+				  <td>{{ course }}</td>
+				  <td>{{ results[course]['test1'] }}</td>
+				  <td>{{ results[course]['test2'] }}</td>
+				  <td>{{ results[course]['test3']}}</td>
+				  <td>{{ results[course]['exam'] }}</td>
+				  <td>{{ results[course]['total'] }}</td>
+				  <td>{{ results[course]['course_position'] }}</td>
+				</tr>
+				{% endfor %}
+				{% if error %}
+					<h5 style="color: red; text-align: center; margin: 5px 0px 5px 0px;">{{ error }}</h5>
+				{% endif %}
+			  </table>
+			  <div style="text-align: center; margin-top: 75px;"><input id="student_id" type="test" name="student_id" placeholder="Enter student_id"></div>
 			<div><button>Check Results</button></div>
+			</form>
 		</div>
 		<div id="downsection">
 			<h1>Extra curricular</h1>

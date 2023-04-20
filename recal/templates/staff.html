@@ -79,15 +79,22 @@
 				</div>
 				<div id="insidefirst">
 					<h3>2: calculate student's results</h3>
-					<h4>set course position</h4>
-					<input type="text" name="course_position" placeholder="insert course_id">
-					<button>calculate</button>
-					<h4>compute class position</h4>
-					<input type="text" name="class_results" placeholder="insert course_id">
-					<button>class results</button>
-					<h4>get student's result</h4>
-					<input type="text" name="class_results" placeholder="insert course_id">
-					<button>check</button>
+					<form method="POST" action="courseposition.html">
+						<!-- <h3 id="firstalert">{{ alert }}</h3> -->
+						<h4>set course position</h4>
+						<input type="text" name="course_position" placeholder="insert course_id">
+						<button>calculate</button>
+					</form>
+					<form method="POST" action="classposition.html">
+						<h4>compute class position</h4>
+						<input type="text" name="class_results" placeholder="insert department_id">
+						<button>class results</button>
+					</form>
+					<form method="POST" action="studentresult.html" target="_blank">
+						<h4>get student's result</h4>
+						<input type="text" name="student_results" placeholder="insert student_id">
+						<button>check</button>
+					</form>
 				</div>
 
 			</div>
