@@ -16,6 +16,7 @@
 }
 #section2 {
 	display: flex;
+	margin-top: 150px;
 }
 #innerblock {
 	display: inline-block;
