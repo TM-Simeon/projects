@@ -1,0 +1,58 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	/*background: grey;*/
+	min-height: 80vh;
+}
+#header {
+	min-height: 100px;
+	width: 100%;
+	background: #c2d7f0;
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	text-align: center;
+	position: fixed;
+	top: 0;
+
+}
+#header h1 {
+	font-size: 60px;
+}
+
+#intro {
+	background: green;
+	color: white;
+	margin-top: 110px;
+	min-height: 500px;
+	line-height: 500px;
+	text-align: center;
+	background-image: url("../../background.jpg");
+	font-weight: 50px;
+	font-size: 50px;
+}
+.part {
+	min-height: 200px;
+	background: gray;
+	min-width: 300px;
+	display: inline-block;
+	margin-top: 15px;
+	box-shadow: 5px 5px black;
+
+
+}
+.part h4 {
+	text-align: left;
+	margin-left: 10px;
+}
+.part a {
+	text-decoration: none;
+}
+#part2 {
+	margin: 0px 35px 0px 35px;
+}
+#programdisplay {
+	text-align: center;
+}

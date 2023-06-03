@@ -1,0 +1,108 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	/*background: grey;*/
+	min-height: 80vh;
+}
+#header {
+	min-height: 100px;
+	width: 100%;
+	background: #c2d7f0;
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	text-align: center;
+	position: fixed;
+	top: 0;
+
+}
+#header h1 {
+	font-size: 60px;
+}
+/*#headercycle {
+	position: fixed;
+	top: 0;
+	min-height: 150px;
+	background: #c2d7f0;
+	width: 100%;
+	border-radius: 100%;
+}*/
+
+/*#taggrid {
+	display: grid;
+	grid-gap: 2px;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	grid-auto-rows: 50px;
+	margin-bottom: 25px;
+	margin-top: 200px;
+}*/
+#taggrid {
+	display: flex;
+	margin-top: 200px;
+
+}
+#tag {
+		display: inline;
+	/*width: 100px;*/
+	min-height: 400px;
+	background: #22438C;
+	/*background: #9fa5e0;*/
+	margin: 2px;
+	/*line-height: 50px;*/
+	text-align: center;
+	box-shadow: 3px 3px #d6b38b;
+	color: white;
+
+}
+#tag:first-of-type{
+	width: 50%;
+	text-align: left;
+	font-size: 12px;
+}
+#tag:last-of-type {
+	min-width: 80%;
+	text-align: left;
+}
+#tag:last-of-type label:first-of-type{
+	display: block;
+	margin-top: 30px;
+}
+#tag:last-of-type textarea:first-of-type {
+	min-width: 100%;
+}
+#tag:last-of-type label{
+	display: inline-block;
+	min-width: 15px;
+}
+#tag h2{
+	margin-bottom: 20%;
+	margin-top: 10%;
+	text-transform: uppercase;
+}
+#tag:last-of-type h2{
+	margin-bottom: 15px;
+	margin-top: 25px;
+}
+#tag:last-of-type h2, textarea, label{
+	margin-left: 35px;
+}
+#tag:last-of-type button{
+	margin-left: 35px;
+	min-width: 180px;
+	margin-top: 30px;
+}
+#tag:last-of-type select{
+	margin-left: 35px;
+}
+
+form a {
+	background: black;
+	color: white;
+	min-width: 100px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 10px;
+	text-decoration: none;
+}

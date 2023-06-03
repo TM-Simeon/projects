@@ -1,0 +1,137 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	/*background: grey;*/
+	min-height: 90vh;
+}
+#header {
+	min-height: 100px;
+	width: 100%;
+	/*background: #c2d7f0;*/
+	background: black;
+	color: white;
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	text-align: center;
+	position: fixed;
+	top: 0;
+
+}
+#header h1 {
+	font-size: 60px;
+}
+body h2:first-of-type{
+	font-size: 35px;
+	text-align: center;
+	margin-top: 120px;
+}
+#questions {
+	display: flex;
+}
+#selectionarea {
+	width: 15%;
+	margin-left: 5px;
+	display: inline-block;
+}
+#selectionarea input {
+	margin-bottom: 15px;
+}
+#selection {
+	display: grid;
+	grid-gap: 2px;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	grid-auto-rows: 50px;
+
+}
+.question {
+	/*display: inline-block;*/
+	min-height: 5px;
+	min-width: 5px;
+	background: #c2d7f0;
+	text-align: center;
+}
+.question a{
+	text-decoration: none;
+}
+#display {
+	/*background: gray;*/
+	min-height: 350px;
+	display: inline-block;
+	width: 80%;
+	margin-left: 20px;
+	/*float: right;*/
+}
+#displayquestion {
+	min-height: 80%;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+#displayoptions {
+	text-align: center;
+}
+#displayquestion a {
+	text-decoration: none;
+	/*margin-right: 10px;*/
+	color: black;
+}
+#displayquestionoptions {
+	margin-left: 20px;
+	margin-top: 20px;
+}
+#displayoptions > button > h1{
+	min-width: 25px;
+	text-align: center;
+	background: pink;
+}
+#results{
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+#graphs {
+	min-height: 300px;
+	background: #c2d7f0;
+	width: 48%;
+	margin:  auto;
+	display: inline-block;
+}
+#winners h1 {
+	text-align: center;
+}
+#positions {
+  max-width: 50%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#positions h3{
+	margin-bottom: 15px;
+}
+#time {
+	text-align: center;
+	color: green;
+}
+#displaycourse {
+	width: 40%;
+	display: inline-block;
+	text-align: right;
+}
+#time {
+	width: 40%;
+	display: inline-block;
+	text-align: right;
+	font-size: 50px;
+}
+#select_subject {
+	margin-bottom: 10px;
+	background: black;
+	color: white;
+}
+#submit_subject {
+	margin-bottom: 10px;
+	background: black;
+	color: white;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>quiz</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/quiz.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/quizfooter.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
+		<!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+
+
+</head>
+<body>
+<!-- <div id="headercycle"></div> -->
+<audio id="audio" src="./song.mp3"></audio>
+
+<div id="header">
+	<h1>Sacred Heart Catholic College Ijebu Ode</h1>
+</div>
+<h2 id="displaycourse">Display course: Q|No </h2>
+<h2 id="time"></h2>
+<h5 id="checkifitwork"></h5>
+<!-- <h2>Time: 5:00 </h2> -->
+<div id="questions">
+	<div id="selectionarea">
+		<!-- <input type="text" name="search" placeholder="search for a question"> -->
+		<select id="select_subject">
+			<option value="select">select subject</option>
+				<option value="mathematics">mathematics</option>
+				<option value="English Language">english</option>
+				<option value="science">science</option>
+				<option value="chemistry">chemistry</option>
+		</select>
+		<button id="submit_subject" onclick="get_questions_json()">get questions</button>
+		<div id="selection">
+			<div class="question" id="1"><a href="#" onclick="clicked(this.parentElement.id)"><h1>1</h1></a></div>
+			<div class="question" id="2"><a href="#" onclick="clicked(this.parentElement.id)"><h1>2</h1></a></div>
+			<div class="question" id="3"><a href="#" onclick="clicked(this.parentElement.id)"><h1>3</h1></a></div>
+			<div class="question" id="4"><a href="#" onclick="clicked(this.parentElement.id)"><h1>4</h1></a></div>
+			<div class="question" id="5"><a href="#" onclick="clicked(this.parentElement.id)"><h1>5</h1></a></div>
+			<div class="question" id="6"><a href="#" onclick="clicked(this.parentElement.id)"><h1>6</h1></a></div>
+			<div class="question" id="7"><a href="#" onclick="clicked(this.parentElement.id)"><h1>7</h1></a></div>
+			<div class="question" id="8"><a href="#" onclick="clicked(this.parentElement.id)"><h1>8</h1></a></div>
+			<div class="question" id="9"><a href="#" onclick="clicked(this.parentElement.id)"><h1>9</h1></a></div>
+			<div class="question" id="10"><a href="#" onclick="clicked(this.parentElement.id)"><h1>10</h1></a></div>
+			<div class="question" id="11"><a href="#" onclick="clicked(this.parentElement.id)"><h1>11</h1></a></div>
+			<div class="question" id="12"><a href="#" onclick="clicked(this.parentElement.id)"><h1>12</h1></a></div>
+			<div class="question" id="13"><a href="#" onclick="clicked(this.parentElement.id)"><h1>13</h1></a></div>
+			<div class="question" id="14"><a href="#" onclick="clicked(this.parentElement.id)"><h1>14</h1></a></div>
+			<div class="question" id="15"><a href="#" onclick="clicked(this.parentElement.id)"><h1>15</h1></a></div>
+			<div class="question" id="16"><a href="#" onclick="clicked(this.parentElement.id)"><h1>16</h1></a></div>
+			<div class="question" id="17"><a href="#" onclick="clicked(this.parentElement.id)"><h1>17</h1></a></div>
+			<div class="question" id="18"><a href="#" onclick="clicked(this.parentElement.id)"><h1>18</h1></a></div>
+			<div class="question" id="19"><a href="#" onclick="clicked(this.parentElement.id)"><h1>19</h1></a></div>
+			<div class="question" id="20"><a href="#" onclick="clicked(this.parentElement.id)"><h1>20</h1></a></div>
+			<div class="question" id="21"><a href="#" onclick="clicked(this.parentElement.id)"><h1>21</h1></a></div>
+
+		</div>
+	</div>
+	<div id="display">
+		<div id="displayquestion">
+			<!-- <div class="actualno" id="0"> -->
+			<h1 id="question1">Once the question you select is displayed on the screen, your time automatically starts counting</h1>
+			<h1 id="instructions"><br>Once the phone a friend button is clicked, his time starts counting immediately, he or she must answer the question within the time frame <br><br>Choose a question from the light blue options</h1>
+			<div id="displayquestionoptions">
+			<a href="#" onclick="correct('optionA')"><h1 id="optionA"></h1></a>
+			<a href="#" onclick="correct('optionB')"><h1 id="optionB"></h1></a>
+			<a href="#" onclick="correct('optionC')"><h1 id="optionC"></h1></a>
+			<a href="#" onclick="correct('optionD')"><h1 id="optionD"></h1></a>
+			<!-- </div> -->
+			</div>
+		</div>
+		<div id="displayoptions">
+			<button onclick="fiftyfifty()"><h1>50 | 50</h1></button>
+			<button onclick="timer(40, 1000)"><h1>Phone AF</h1></button>
+			<!-- <button><h1>C</h1></button>
+			<button><h1>D</h1></button> -->
+
+		</div>
+	</div>
+</div>
+<div id="results">
+	<div id="graphs">
+				<h1>Round one (1)</h1>
+					
+					<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+					<button id="plotgraph" onclick="plotgraph()">plot graph</button>
+	</div>
+	<div id="graphs">
+				<h1>Round two (2)</h1>
+					<canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+				<button id="plotgraph1" onclick="plotgraph1()">plot graph1</button>
+				<input id="round2_teams_value" type="text" name="round2_teams" placeholder="no of teams for round 2">
+				<button onclick="round2_teams()">Get teams</button>
+	</div>
+</div>
+<div id="winners">
+	<h1>Today's Winners</h1>
+	<div id="positions">
+			<h3 id="firstposition"></h3>
+			<h3 id="secondposition"></h3>
+			<h3 id="thirdposition"></h3>
+			<h3 id="p1"></h3>
+			<h3 id="p2"></h3>
+			<h3 id="p3"></h3>
+			<h3 id="p4"></h3>
+			<h3 id="p5"></h3>
+
+			<button id="positioning" onclick="positions()">Check Results</button>
+	</div>
+
+</div>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Contact Us</h3>
+        <p>123 Main Street<br>City, State ZIP<br>Phone: (123) 456-7890<br>Email: info@yourcompany.com</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Follow Us</h3>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center">&copy; 2023 Your Company. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- <script type="text/javascript" src="../static/js/script.js" type="module"></script> -->
+<script type="text/javascript" src="../static/js/quiz.js" type="module"></script>
+<script type="text/javascript" src="../static/js/scores.js" type="module"></script>
+</body>
+</html>
+
