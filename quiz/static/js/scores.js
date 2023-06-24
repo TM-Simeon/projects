@@ -7,11 +7,12 @@
 // 	document.getElementById('thirdposition').innerHTML = "First Position = "+schools[2]+" with a total of "+ positions[2]+" points"
 // }
 
-var teams = ['teamA', 'teamB', 'teamC', 'ckcc']
+var teams = ['team1', 'team2', 'team3', 'team4','team5','team6','team7','team8','team9','team10']
 
 var score_data = {}
 var sorted_data = {}
 var sorted_scores_data = []
+var sorted_scores_position = {}
 
 
 async function get_scores_data(teams){
@@ -49,32 +50,16 @@ async function positions(){
 	await get_scores_data(teams)
 	await get_sorted_data(teams)
 	sorted_scores_data = sorted_data['scores']
+	sorted_scores_position = sorted_data['positions']
 	var count = sorted_scores_data.length
-	// for (let i = 1; i <= count; i++){
-	// 	// var position = i + 1
-	// 	document.getElementById("p"+ i).innerHTML = i + " position = " + sorted_scores_data[i-1]
-	// }
-	var j = 1;
-	var m = 0
-	while (j <= count){
-		// for(let k = 1; k <= count; k++)
-		var k = 0;
-
-		while (k < count){
-			if (sorted_scores_data[j-1] == score_data[teams[k]]){
-				document.getElementById('p'+j).innerHTML = j + " position = "+ teams[j-1] + " with total score: " + score_data[teams[j-1]]*5+" points"
-			}
-			//use this to account for ties in the scores
-			while (sorted_scores_data[j-1] == sorted_scores_data[j]){
-				m = j + 1
-				document.getElementById('p'+m).innerHTML = j + " position = "+ teams[j-1] + " with total score: " + score_data[teams[j-1]]*5+" points"
-				j++
-			}
-			k++
-		}
-
-		j++
+	// document.getElementById('p1').innerHTML = sorted_scores_position[sorted_scores_data[3]]
+	for(let i = 0; i< teams.length; i++){
+		var positionDiv = document.getElementById('positions');
+		var h1_1 = document.createElement("h3");
+		var text1 = document.createTextNode(teams[i]+": position = " +sorted_scores_position[score_data[teams[i]]]+" with a total of "+score_data[teams[i]]*5+" points");
+		h1_1.appendChild(text1);
+		positionDiv.appendChild(h1_1);
 	}
-	// alert("fine")
-	// document.getElementById("p1").innerHTML = count
 }
+
+// function findteam()

@@ -29,14 +29,14 @@ body {
 	min-height: 500px;
 	line-height: 500px;
 	text-align: center;
-	background-image: url("../../background.jpg");
+	background-image: url("/static/images/background.jpg");
 	font-weight: 50px;
 	font-size: 50px;
 }
 .part {
 	min-height: 200px;
 	background: gray;
-	min-width: 300px;
+	min-width: 350px;
 	display: inline-block;
 	margin-top: 15px;
 	box-shadow: 5px 5px black;
@@ -51,8 +51,11 @@ body {
 	text-decoration: none;
 }
 #part2 {
-	margin: 0px 35px 0px 35px;
+	margin: 15px 35px 0px 35px;
 }
 #programdisplay {
 	text-align: center;
+	display: flex;
+	margin-left: 15%;
+	margin-right: 15%;
 }

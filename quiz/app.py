@@ -1,7 +1,9 @@
 from flask import Flask, redirect, url_for, render_template, request, flash, jsonify
 from db import *
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app)
 
 number_of_teams = 0
 count = 1
@@ -9,6 +11,10 @@ count = 1
 @app.route('/quiz')
 def quiz():
 	return render_template("quiz.html")
+
+@app.route('/')
+def index():
+	return render_template("index.html")
 
 @app.route('/staff')
 def staff():
@@ -51,6 +57,7 @@ def insertscore():
 	return team + " + " + str(score) + subject + str(question_number)
 
 @app.route('/get_questions', methods=['GET','POST'])
+@cross_origin(origin='*')
 def getquestions():
 	data = request.get_json()
 	subject = data['subject']
@@ -129,6 +136,7 @@ def get_sorted_scores():
 	# sort sorted_scores_list and return it
 	bubbleSort(sorted_scores_list)
 	sorted_scores_json['scores'] = sorted_scores_list
+	sorted_scores_json['positions'] = cal_position(sorted_scores_list)
 	return jsonify(sorted_scores_json)
 
 
@@ -143,7 +151,7 @@ def insert_question():
 	data = request.get_json()
 	subject = data['subject']
 	question_number = data['question_number']
-	question_number = int(question_number) + 20
+	question_number = int(question_number) + 135
 	question = data['question']
 	optionA = data['optionA']
 	optionB = data['optionB']
@@ -165,4 +173,4 @@ def insert_question():
 	return render_template("staffinsert.html")
 
 if __name__ == '__main__':
-	app.run()
+	app.run(host='0.0.0.0')

@@ -8,15 +8,15 @@ conn.execute('CREATE TABLE IF NOT EXISTS scores ( team TEXT NOT NULL, subject TE
 conn.commit()
 conn.close()
 
-# def insertstaff(name, course_id, email):
-#     try:
-#         conn = sqlite3.connect('db.db')
-#         conn.execute("INSERT INTO staff (name, course_id, email) values('{}','{}','{}')".format(name, course_id, email))
-#         conn.commit()
-#         conn.close()
-#         return ("staff inserted successfully")
-#     except Exception as e:
-#         return e
+def insertstaff(name, course_id, email):
+    try:
+        conn = sqlite3.connect('db.db')
+        conn.execute("INSERT INTO staff (name, course_id, email) values('{}','{}','{}')".format(name, course_id, email))
+        conn.commit()
+        conn.close()
+        return ("staff inserted successfully")
+    except Exception as e:
+        return e
 
 def bubbleSort(arr):
 
@@ -26,3 +26,35 @@ def bubbleSort(arr):
 		for j in range(0, n - i - 1):
 			if arr[j] < arr[j + 1]:
 				arr[j], arr[j + 1] = arr[j+1], arr[j]
+
+
+# def cal_position(scores):
+# 	position_json = {}
+# 	length = len(scores)
+# 	position = 1
+# 	while(length > 0):
+# 		while(scores[length] == scores[length + 1]):
+# 			length++
+
+
+def cal_position(scores):
+	positions = []
+	position_json = {}
+
+	position = 1
+	prev_score = None
+
+	# Calculate positions
+	for score in scores:
+	    if score != prev_score:
+	        # Assign a new position if the score is different from the previous one
+	        position_json[score] = position
+
+	    position += 1
+	    prev_score = score
+
+
+	return position_json
+# sorted_scores = [92, 92, 90, 88, 85, 78]
+
+# print(cal_position(sorted_scores)[88])

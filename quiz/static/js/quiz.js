@@ -5,7 +5,8 @@ var eng_questions = {};
 var counting = 0
 var team = ''
 // var teams = ['teamA', 'teamB', 'teamC', 'teamD', 'ckcc']
-var teams = ['teamA', 'teamB', 'teamC']
+// var teams = ['teamA', 'teamB', 'teamC', 'cdcc','teamD']
+var teams = ['team1', 'team2', 'team3', 'team4','team5','team6','team7','team8','team9','team10']
 var round2teams = []
 var totalTeams = teams.length
 
@@ -13,16 +14,30 @@ var maths_questions = {}
 async function get_questions_json(){
 	var subject = document.getElementById('select_subject').value
 	await get_questions(subject)
-	for (let i = 1; i <= 20; i++){
-		document.getElementById(i).style.background = '#c2d7f0'
+	if (subject == "English Language"){
+			for (let i = 1; i <= 60; i++){
+				document.getElementById(i).style.background = '#c2d7f0'
+				if(i > 50){
+					document.getElementById(i).style.display = "none"
+
+				}
+		}
 	}
+	else{
+		for (let i = 1; i <= 60; i++){
+		document.getElementById(i).style.background = '#c2d7f0'
+		document.getElementById(i).style.display = "inline"
+
+		}
+	}
+	document.getElementById('displaycourse').innerHTML = subject
 
 }
 async function get_questions(subject){
 
 	var data = {subject: subject}
 
-	const response = await fetch("http://localhost:5000/get_questions",{
+	const response = await fetch("http://192.168.3.122:5000/get_questions",{
 		method: 'POST',
 		headers: {
 			'Content-Type':'application/json'
@@ -42,7 +57,14 @@ function clicked(e){
 		status == 1
 		
 	}
-	timer(25, 1000)
+	var subvalue = document.getElementById('select_subject').value
+	if (subvalue == "mathematics"){
+		timer(60,1000)
+	}
+	else {
+	timer(30, 1000)
+
+	}
 	// document.getElementByClassName("actualno")[0].id = e
 	document.getElementById(e).style.background ='black'
 	document.getElementById("question1").innerHTML = e +". " + maths_questions["question"+e]
@@ -78,18 +100,30 @@ function clicked(e){
 // myAudio.play()
 
 
-let mysound = new Audio('/static/js/song.mp3')
+let passsound = new Audio('/static/js/pass.mp3')
+let failsound = new Audio('/static/js/fail.mp3')
 
-function playsound(){
-  mysound.play()
+function playpasssound(){
+  passsound.play()
 }
-function pausesound(){
-  mysound.pause()
+function pausepass(){
+  passsound.pause()
 }
 
-function stopsound(){
-  mysound.pause()
-  mysound.currentTime = 0
+function stoppass(){
+  passsound.pause()
+  passsound.currentTime = 0
+}
+function playfailsound(){
+  failsound.play()
+}
+function pausefail(){
+  failsound.pause()
+}
+
+function stopfail(){
+  failsound.pause()
+  failsound.currentTime = 0
 }
 
 
@@ -98,15 +132,15 @@ function correct(option){
 	if (option == correct){
 		document.getElementById(option).style.color = 'green'
 		answer(team, maths_questions['subject'], question_number, 1)
-		stopsound()
-		playsound()
+		stoppass()
+		playpasssound()
 
 	}
 	else {
 		document.getElementById(option).style.color = 'red'
 		answer(team, maths_questions['subject'], question_number, 0)
-		stopsound()
-		playsound()
+		stopfail()
+		playfailsound()
 
 	}
 
@@ -169,7 +203,7 @@ async function question(team){
 
 	var data = {name: 'joseph', team: team}
 
-	const response = await fetch("http://localhost:5000/score",{
+	const response = await fetch("http://192.168.3.122:5000/score",{
 		method: 'POST',
 		headers: {
 			'Content-Type':'application/json'
@@ -186,7 +220,7 @@ async function answer(team, subject, question_number, score){
 
 	var data = {team: team, subject: subject, question_number: question_number, score: score}
 
-	const response = await fetch("http://localhost:5000/insertscore",{
+	const response = await fetch("http://192.168.3.122:5000/insertscore",{
 		method: 'POST',
 		headers: {
 			'Content-Type':'application/json'
@@ -212,7 +246,7 @@ async function plotgraph(){
 	// 	mydata.push(values[i])
 	// 	}
 	await get_scores_json(mylabels)
-	document.getElementById('time').innerHTML = " 1st "+ my_scores[teams[0]] * 5 +" 2nd "+ my_scores[teams[1]] +" 3rd "+ my_scores[teams[2]]+" 4th "+ my_scores[teams[3]]+" 5th "+ my_scores[teams[4]]
+	// document.getElementById('time').innerHTML = " 1st "+ my_scores[teams[0]] * 5 +" 2nd "+ my_scores[teams[1]] +" 3rd "+ my_scores[teams[2]]+" 4th "+ my_scores[teams[3]]+" 5th "+ my_scores[teams[4]]
 	for (let i = 0; i < mylabels.length; i++){
 		mydata.push(my_scores[teams[i]] * 5)
 		}
@@ -275,6 +309,7 @@ async function plotgraph1(){
 
 	// Create the chart
 	const myChart = new Chart(document.getElementById('myChart1'), config);
+	// teams = mylabels
 }
 
 
@@ -308,7 +343,7 @@ async function get_scores(teams){
 
 	var data = {teams: teams}
 
-	const response = await fetch("http://localhost:5000/get_scores",{
+	const response = await fetch("http://192.168.3.122:5000/get_scores",{
 		method: 'POST',
 		headers: {
 			'Content-Type':'application/json'
@@ -328,7 +363,7 @@ async function get_sorted_scores(teams){
 
 	var data = {teams: teams}
 
-	const response = await fetch("http://localhost:5000/get_sorted_scores",{
+	const response = await fetch("http://192.168.3.122:5000/get_sorted_scores",{
 		method: 'POST',
 		headers: {
 			'Content-Type':'application/json'
@@ -354,7 +389,7 @@ async function round2_teams(){
 			}
 		}
 	}
-	document.getElementById('time').innerHTML = sorted_scores[2]
+	// document.getElementById('time').innerHTML = sorted_scores[2]
 
 
 }
